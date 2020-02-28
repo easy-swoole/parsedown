@@ -493,8 +493,10 @@ class ParserDown
     protected function blockNoticeComplete($Block)
     {
         $text = $Block['element']['text']['text'];
-
-        $Block['element']['text']['text'] = $text;
+        
+        unset ($Block['element']['text']['text']);
+        $Block['element']['text']['rawHtml'] = html_entity_decode((new static)->text($text));
+        $Block['element']['text']['allowRawHtmlInSafeMode'] = true;
 
         return $Block;
     }
