@@ -3,7 +3,7 @@
     "type": "library",
     "description": "",
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=8.1",
         "ext-mbstring": "*"
     },
     "require-dev": {
